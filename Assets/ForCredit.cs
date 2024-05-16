@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 public class ForCredit : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    void Credit()
     {
         
     }
     // Update is called once per frame
-    public void Credit()
+    public void CreditButton()
     {
         Debug.Log("ForCredit");
         SceneManager.LoadScene("Credit");

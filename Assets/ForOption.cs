@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class ForOption : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -9,10 +9,10 @@ public class ForOption : MonoBehaviour
     {
         
     }
-
     // Update is called once per frame
-    void Update()
+    public void Option()
     {
-        
+        Debug.Log("ForOption");
+        SceneManager.LoadScene("Option");
     }
 }
