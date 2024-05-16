@@ -7,9 +7,11 @@ namespace PLAYER
     public class Attack : MonoBehaviour
     {
         [SerializeField] public GameObject bullet;
+        [SerializeField] public GameObject ball;
         [SerializeField] private float speed;
         [SerializeField] private int count;
         [SerializeField] private float interval = 0;
+
 
         // Update is called once per frame
         void Update()
@@ -33,7 +35,7 @@ namespace PLAYER
                     ballrb.AddForce(transform.forward * speed);
 
                     //２秒経ったら破壊する
-                    Destroy(ball, 2.0f);
+                    Destroy(ball, 1.0f);
 
                 }
             }
@@ -42,6 +44,17 @@ namespace PLAYER
                 count = 30;
             }
         }
+
+        private void OnCollisionEnter(Collision collision)      //衝突時に用いるメソッド
+        {
+            if (collision.gameObject.tag == "Enemy")             //  Enemyと衝突した時
+            {
+                Destroy(ball);                           //消える
+            }
+
+        }
+
+
     }
 
 }
