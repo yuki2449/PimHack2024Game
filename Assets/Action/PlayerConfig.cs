@@ -8,10 +8,10 @@ namespace PLAYER
     {
         [SerializeField] private Vector3 Camera_Direction;   //カメラの向き
         [SerializeField] private Vector3 move_direction;     //プレイヤー移動の向き
-        [SerializeField] private Vector3 Player_Angle;         //プレイヤーの角度
+        [SerializeField] private Vector3 Player_Angle;       //プレイヤーの角度
         [SerializeField] private GameObject Camera;          // アタッチするカメラ
         [SerializeField] private GameObject Config;          //親オブジェクトを定義
-        [SerializeField] private Rigidbody rb;               //物理演算コンポーネント
+        private Rigidbody rb;                                //物理演算コンポーネント
         [SerializeField] private float speed;                //スピードの定義
 
         private void Start()
@@ -38,10 +38,10 @@ namespace PLAYER
 
             //move//
 
-            Player_Angle = transform.localEulerAngles;
-            Player_Angle.x = Config.transform.localEulerAngles.x;
-            Player_Angle.y = Config.transform.localEulerAngles.y;
-            PlayerTransform.rotation = Quaternion.Euler(Player_Angle.x, Player_Angle.y, 0);
+            Player_Angle = transform.localEulerAngles;                  //プレイヤーの向きを取得
+            Player_Angle.x = Config.transform.localEulerAngles.x;       //回転させた時のx軸角度
+            Player_Angle.y = Config.transform.localEulerAngles.y;       //回転させた時のy軸角度
+            PlayerTransform.rotation = Quaternion.Euler(Player_Angle.x, Player_Angle.y, 0); //回転してもプレイヤーの向きは変わらない
 
 
 
