@@ -33,7 +33,7 @@ namespace ENEMY
 
             if (HP <= 0)                                            //HPが０になった時消える
             {
-                Destroy(gameObject);
+                Destroy(gameObject,0.5f);
             }
         }
         public void Damage(int damage)                              //ダメージを受けた時、HPを減らす
@@ -47,15 +47,12 @@ namespace ENEMY
             {
                 Destroy(this.gameObject);                           //消える
             }
-        }
-
-        private void OnTriggerEnter(Collider other)                 //球に当たった時
-        {
-            if (other.gameObject.CompareTag("Shell"))
+            if (collision.gameObject.tag == "Shell")                // 球に当たった時
             {
-                Damage(damage);                                     //ダメージを受け
-                Destroy(other.gameObject);                          //球も消える
+                Damage(damage);                                     // ダメージを受ける
             }
         }
+
+        
     }
 }

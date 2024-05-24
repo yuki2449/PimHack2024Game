@@ -492,8 +492,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemypref: {fileID: 4061707375316982129, guid: 4377715a3963a4c4c9145515cca88911, type: 3}
-  Respawn_MinT: 2
-  Respawn_MaxT: 5
+  Respawn_MinT: 3
+  Respawn_MaxT: 10
   Respawn_MinX_Pos: -10
   Respawn_MaxX_Pos: 10
   Respawn_MinY_Pos: 0
@@ -699,8 +699,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemypref: {fileID: 4061707375316982129, guid: 4377715a3963a4c4c9145515cca88911, type: 3}
-  Respawn_MinT: 2
-  Respawn_MaxT: 5
+  Respawn_MinT: 3
+  Respawn_MaxT: 10
   Respawn_MinX_Pos: 5
   Respawn_MaxX_Pos: 10
   Respawn_MinY_Pos: 0
@@ -1219,8 +1219,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemypref: {fileID: 4061707375316982129, guid: 4377715a3963a4c4c9145515cca88911, type: 3}
-  Respawn_MinT: 2
-  Respawn_MaxT: 5
+  Respawn_MinT: 3
+  Respawn_MaxT: 10
   Respawn_MinX_Pos: -10
   Respawn_MaxX_Pos: -5
   Respawn_MinY_Pos: 0
@@ -1336,8 +1336,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemypref: {fileID: 4061707375316982129, guid: 4377715a3963a4c4c9145515cca88911, type: 3}
-  Respawn_MinT: 2
-  Respawn_MaxT: 5
+  Respawn_MinT: 3
+  Respawn_MaxT: 10
   Respawn_MinX_Pos: -10
   Respawn_MaxX_Pos: 10
   Respawn_MinY_Pos: 0
@@ -1404,7 +1404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 2806166957567683972, guid: 8ca7f01547f04490a8ac95beb746413e, type: 3}
-  speed: 1000
+  speed: 2000
   count: 50
   interval: 0
 --- !u!1 &1852772541
