@@ -7,14 +7,27 @@ namespace ENEMY
     public class Spawn : MonoBehaviour
     {
 
-        [SerializeField] public GameObject enemypref;                           //生成される敵を定義
+        [Header("Enemy Prefab")]                                                //生成される敵を定義
+        public GameObject enemypref;
+        [Header("Respawn Time")]
+        [Range(1f, 3f)]
         [SerializeField] public float Respawn_MinT = 2f;                        //生成される最小時間と最大時間
+        [Range(5f, 10f)]
         [SerializeField] public float Respawn_MaxT = 5f;
+        [Header("X Respawn Pos")]
+        [Range(-10f, 10f)]
         [SerializeField] public float Respawn_MinX_Pos = -10f;                  //X軸での湧く範囲
+        [Range(-10f, 10f)]
         [SerializeField] public float Respawn_MaxX_Pos = 10f;
+        [Header("Y Respawn Pos")]
+        [Range(-10f, 0f)]
         [SerializeField] public float Respawn_MinY_Pos = 0f;                    //Y軸での湧く範囲
+        [Range(0f, 10f)]
         [SerializeField] public float Respawn_MaxY_Pos = 5f;
+        [Header("Z Respawn Pos")]
+        [Range(-10f, 10f)]
         [SerializeField] public float Respawn_MinZ_Pos = -10f;                  //Z軸での湧く範囲
+        [Range(-10f, 10f)]
         [SerializeField] public float Respawn_MaxZ_Pos = 10f;
         private float Respawn_Interval;                                         //生成間隔を定義
         private float time = 0f;                                                //生成間隔を測るための時間を定義
