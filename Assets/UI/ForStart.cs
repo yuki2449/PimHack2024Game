@@ -13,7 +13,7 @@ public class ForStart : MonoBehaviour
     public void StartButton()
     {
         Debug.Log("ForStart");
-        SceneManager.LoadScene("Action");
+        SceneManager.LoadScene("GameScene");
     }
 }
 
