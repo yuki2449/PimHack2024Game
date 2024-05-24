@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HitPoint : MonoBehaviour
 {
-    float playerHP = 3;
+    public int DefenceHP = 3;
     [SerializeField] Image Hp1;
     [SerializeField] Image Hp2;
     [SerializeField] Image Hp3;
@@ -13,25 +13,25 @@ public class HitPoint : MonoBehaviour
 
     void Update()
     {
-        // J‚ð‰Ÿ‚·‚ÆHP‚ªŒ¸‚è‚Ü‚·
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            playerHP -= 1;
-        }
 
-        if (playerHP == 2)
+        if (DefenceHP == 2)
         {
             Hp1.GetComponent<Image>().enabled = false;
         }
 
-        if (playerHP == 1)
+        if (DefenceHP == 1)
         {
             Hp2.GetComponent<Image>().enabled = false;
         }
 
-        if (playerHP == 0)
+        if (DefenceHP == 0)
         {
             Hp3.GetComponent<Image>().enabled = false;
         }
+    }
+    public int DefenceHPProperty
+    {
+        get { return DefenceHP; }
+        set { DefenceHP = value; }
     }
 }
