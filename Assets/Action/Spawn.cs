@@ -10,9 +10,9 @@ namespace ENEMY
         [Header("Enemy Prefab")]                                                //生成される敵を定義
         public GameObject enemypref;
         [Header("Respawn Time")]
-        [Range(1f, 3f)]
+        [Range(1f, 30f)]
         [SerializeField] public float Respawn_MinT = 2f;                        //生成される最小時間と最大時間
-        [Range(5f, 10f)]
+        [Range(5f, 60f)]
         [SerializeField] public float Respawn_MaxT = 5f;
         [Header("X Respawn Pos")]
         [Range(-10f, 10f)]
