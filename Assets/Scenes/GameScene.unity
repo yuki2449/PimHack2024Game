@@ -981,8 +981,8 @@ MonoBehaviour:
   Respawn_MaxX_Pos: 10
   Respawn_MinY_Pos: 0
   Respawn_MaxY_Pos: 5
-  Respawn_MinZ_Pos: 5
-  Respawn_MaxZ_Pos: 10
+  Respawn_MinZ_Pos: 15
+  Respawn_MaxZ_Pos: 30
 --- !u!4 &479513139
 Transform:
   m_ObjectHideFlags: 0
@@ -1026,7 +1026,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530049849}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1104,7 +1104,7 @@ MonoBehaviour:
   Player_Angle: {x: 0, y: 0, z: 0}
   Camera: {fileID: 1885111382}
   Config: {fileID: 2011063575}
-  speed: 10
+  speed: 20
 --- !u!54 &530049855
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1331,8 +1331,8 @@ MonoBehaviour:
   enemypref: {fileID: 4061707375316982129, guid: 4377715a3963a4c4c9145515cca88911, type: 3}
   Respawn_MinT: 3
   Respawn_MaxT: 10
-  Respawn_MinX_Pos: 5
-  Respawn_MaxX_Pos: 10
+  Respawn_MinX_Pos: 15
+  Respawn_MaxX_Pos: 30
   Respawn_MinY_Pos: 0
   Respawn_MaxY_Pos: 5
   Respawn_MinZ_Pos: -10
@@ -1585,6 +1585,59 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7261ea57334aa4543a890ea68a0e97c2, type: 3}
+--- !u!1 &866975880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 866975882}
+  - component: {fileID: 866975881}
+  m_Layer: 0
+  m_Name: RareSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &866975881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866975880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e531faf1b944d039359fc18c423bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemypref: {fileID: 4061707375316982129, guid: 0c7c9822c25ee224e82e47faca47cb4a, type: 3}
+  Respawn_MinT: 10
+  Respawn_MaxT: 20
+  Respawn_MinX_Pos: -50
+  Respawn_MaxX_Pos: 50
+  Respawn_MinY_Pos: 0
+  Respawn_MaxY_Pos: 5
+  Respawn_MinZ_Pos: -50
+  Respawn_MaxZ_Pos: 50
+--- !u!4 &866975882
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866975880}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &906637378
 GameObject:
   m_ObjectHideFlags: 0
@@ -1724,9 +1777,17 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -5627550536026561981, guid: 9e7ad000e0ae4804495562b941f02ad1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9e7ad000e0ae4804495562b941f02ad1, type: 3}
       propertyPath: m_Name
       value: "\u307F\u304B\u3093\u3061\u3083\u3093"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015415391883453526, guid: 9e7ad000e0ae4804495562b941f02ad1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1788,7 +1849,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056282249}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1872,7 +1933,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &1056282255
 MonoBehaviour:
@@ -2911,14 +2972,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemypref: {fileID: 4061707375316982129, guid: 4377715a3963a4c4c9145515cca88911, type: 3}
-  Respawn_MinT: 3
+  Respawn_MinT: 1
   Respawn_MaxT: 10
-  Respawn_MinX_Pos: -10
-  Respawn_MaxX_Pos: -5
+  Respawn_MinX_Pos: -30
+  Respawn_MaxX_Pos: -15
   Respawn_MinY_Pos: 0
   Respawn_MaxY_Pos: 5
-  Respawn_MinZ_Pos: -10
-  Respawn_MaxZ_Pos: 10
+  Respawn_MinZ_Pos: -50
+  Respawn_MaxZ_Pos: 50
 --- !u!1 &1548996751
 GameObject:
   m_ObjectHideFlags: 0
@@ -3107,8 +3168,8 @@ MonoBehaviour:
   Respawn_MaxX_Pos: 10
   Respawn_MinY_Pos: 0
   Respawn_MaxY_Pos: 5
-  Respawn_MinZ_Pos: -10
-  Respawn_MaxZ_Pos: -5
+  Respawn_MinZ_Pos: -30
+  Respawn_MaxZ_Pos: -15
 --- !u!4 &1556278408
 Transform:
   m_ObjectHideFlags: 0
@@ -4324,6 +4385,7 @@ SceneRoots:
   - {fileID: 615347638}
   - {fileID: 1556278408}
   - {fileID: 479513139}
+  - {fileID: 866975882}
   - {fileID: 671138048}
   - {fileID: 13399803}
   - {fileID: 1951453976}
