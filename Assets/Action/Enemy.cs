@@ -44,6 +44,8 @@ namespace ENEMY
         {
             HP -= damage;
             EnemyAudio.PlayOneShot(EnemySound);
+
+            Invoke(nameof(Remove), 0.5f);
         }
 
         private void OnCollisionEnter(Collision collision)          //守るものにぶつかった時
@@ -58,6 +60,15 @@ namespace ENEMY
             }
         }
 
+        void Remove()
+        {
+            rb.velocity = Vector3.zero;
+            transform.position = Vector3.MoveTowards(               //守るものに最短距離で近づく
+                transform.position,
+                DefenseObject.transform.position,
+                enemy_speed *3f* Time.deltaTime);
+
+        }
         
     }
 }
