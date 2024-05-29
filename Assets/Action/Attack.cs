@@ -10,6 +10,13 @@ namespace PLAYER
         [SerializeField] private float speed;                           //球の速さ
         [SerializeField] private int count;                             //打てる球数
         [SerializeField] private float interval = 0;                    // 球を発射できるインターバル
+        [SerializeField] public AudioClip AttackSound;                  //攻撃音を定義
+        AudioSource AttackAudio;                                        //
+
+        private void Start()
+        {
+            AttackAudio = GetComponent<AudioSource>();                  //コンポーネントを付与
+        }
 
         void Update()
         {
@@ -32,6 +39,8 @@ namespace PLAYER
                     _ = gameObject.AddComponent<BoxCollider>();
                     ball.AddComponent<Score_zouka>();
                     ballrb.AddForce(transform.forward * speed);         //クリックした向き＊スピードの力を加える
+
+                    AttackAudio.PlayOneShot(AttackSound);               //攻撃音を鳴らす
 
                     Destroy(ball, 1.0f);                                //1秒経ったら破壊する
                 }
