@@ -14,6 +14,8 @@ namespace ENEMY
         [SerializeField] private float enemy_speed;                 //スピードの定義
         [SerializeField] private Vector3 enemy_move_direction;      //enemy移動の向き
         [SerializeField] private Vector3 enemy_Angle;               //enemyの角度
+        [SerializeField] public AudioClip EnemySound;
+        AudioSource EnemyAudio;
 
 
         void Start()
@@ -21,6 +23,8 @@ namespace ENEMY
             DefenseObject = GameObject.FindWithTag("Defence");      //Defence  
 
             rb = this.gameObject.GetComponent<Rigidbody>();         //Rigidbodyをコンポーネントに追加
+
+            EnemyAudio = GetComponent<AudioSource>();
         }
 
 
@@ -39,6 +43,7 @@ namespace ENEMY
         public void Damage(int damage)                              //ダメージを受けた時、HPを減らす
         {
             HP -= damage;
+            EnemyAudio.PlayOneShot(EnemySound);
         }
 
         private void OnCollisionEnter(Collision collision)          //守るものにぶつかった時
