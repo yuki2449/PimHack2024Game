@@ -29,6 +29,8 @@ namespace PLAYER
                             transform.parent.eulerAngles.y,
                             0));
                     Rigidbody ballrb = ball.GetComponent<Rigidbody>();  //球に物理コンポーネント付与
+                    _ = gameObject.AddComponent<BoxCollider>();
+                    ball.AddComponent<Score_zouka>();
                     ballrb.AddForce(transform.forward * speed);         //クリックした向き＊スピードの力を加える
 
                     Destroy(ball, 1.0f);                                //1秒経ったら破壊する
