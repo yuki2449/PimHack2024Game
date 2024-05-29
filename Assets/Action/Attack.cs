@@ -35,6 +35,7 @@ namespace PLAYER
                             transform.parent.eulerAngles.x,
                             transform.parent.eulerAngles.y,
                             0));
+                    ball.AddComponent<Score_zouka>();
                     Rigidbody ballrb = ball.GetComponent<Rigidbody>();  //球に物理コンポーネント付与
                     ballrb.AddForce(transform.forward * speed);         //クリックした向き＊スピードの力を加える
 
