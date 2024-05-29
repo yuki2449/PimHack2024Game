@@ -20,7 +20,7 @@ public class For21 : MonoBehaviour
     {
         step_time += Time.deltaTime;
 
-        if (step_time >= 0.6f)
+        if (step_time >= 1.0f)
         {
             SceneManager.LoadScene("Scene1GS");
         }
