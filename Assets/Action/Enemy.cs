@@ -17,6 +17,9 @@ namespace ENEMY
         [SerializeField] public AudioClip EnemySound;               //
         AudioSource EnemyAudio;                                     //
         [SerializeField] private GameObject KillEffect;             //
+        [SerializeField] public AudioClip KillSound;                //
+        bool killflag = true;
+
 
 
         void Start()
@@ -38,8 +41,10 @@ namespace ENEMY
 
             if (HP <= 0)                                            //HPが０になった時消える
             {
-                Destroy(gameObject,0.5f);
-                Invoke(nameof(kill), 0.5f);
+
+                Destroy(gameObject, 0.5f);
+                Invoke(nameof(kill), 0.49f);
+                Invoke(nameof(KillBGM), 0.2f);
             }
         }
         public void Damage(int damage)                              //ダメージを受けた時、HPを減らす
@@ -47,7 +52,7 @@ namespace ENEMY
             HP -= damage;
             EnemyAudio.PlayOneShot(EnemySound);
 
-            Invoke(nameof(Remove), 0.4f);
+            Invoke(nameof(Remove), 0.5f);
         }
 
         private void OnCollisionEnter(Collision collision)          //守るものにぶつかった時
@@ -68,15 +73,24 @@ namespace ENEMY
             transform.position = Vector3.MoveTowards(               //守るものに最短で近づく
                 transform.position,
                 DefenseObject.transform.position,
-                enemy_speed *3f* Time.deltaTime);
+                enemy_speed * 3f * Time.deltaTime);
 
         }
 
         void kill()                                                             //消える時のエフェクト
         {
-            GameObject effect = Instantiate(KillEffect) as GameObject;          //エフェクト生成
+            GameObject effect = (GameObject)Instantiate(KillEffect);            //エフェクト生成
             effect.transform.position = gameObject.transform.position;          //敵のいる位置に生成
+            Destroy(effect, 0.1f);
         }
-        
+
+        void KillBGM()
+        {
+            if (killflag == true)
+            {
+                EnemyAudio.PlayOneShot(KillSound);
+                killflag = false;
+            }
+        }
     }
 }

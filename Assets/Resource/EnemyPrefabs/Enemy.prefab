@@ -128,7 +128,8 @@ MonoBehaviour:
   enemy_move_direction: {x: 0, y: 0, z: 0}
   enemy_Angle: {x: 0, y: 0, z: 0}
   EnemySound: {fileID: 8300000, guid: 5bd948ce0b41f49c6bc5127e42493901, type: 3}
-  KillEffect: {fileID: 919132149155446097, guid: bd3c3186b708abe499aad4254fc5dbdb, type: 3}
+  KillEffect: {fileID: 337346754196659056, guid: 2f5d0562c17bb4a4f98fce9dc36e64e2, type: 3}
+  KillSound: {fileID: 8300000, guid: 0a974630821d84ae187101b8cc32b8c0, type: 3}
 --- !u!54 &2241673296566311435
 Rigidbody:
   m_ObjectHideFlags: 0
