@@ -14,8 +14,9 @@ namespace ENEMY
         [SerializeField] private float enemy_speed;                 //スピードの定義
         [SerializeField] private Vector3 enemy_move_direction;      //enemy移動の向き
         [SerializeField] private Vector3 enemy_Angle;               //enemyの角度
-        [SerializeField] public AudioClip EnemySound;
-        AudioSource EnemyAudio;
+        [SerializeField] public AudioClip EnemySound;               //
+        AudioSource EnemyAudio;                                     //
+        [SerializeField] private GameObject KillEffect;             //
 
 
         void Start()
@@ -38,6 +39,7 @@ namespace ENEMY
             if (HP <= 0)                                            //HPが０になった時消える
             {
                 Destroy(gameObject,0.5f);
+                Invoke(nameof(kill), 0.5f);
             }
         }
         public void Damage(int damage)                              //ダメージを受けた時、HPを減らす
@@ -45,7 +47,7 @@ namespace ENEMY
             HP -= damage;
             EnemyAudio.PlayOneShot(EnemySound);
 
-            Invoke(nameof(Remove), 0.5f);
+            Invoke(nameof(Remove), 0.4f);
         }
 
         private void OnCollisionEnter(Collision collision)          //守るものにぶつかった時
@@ -60,14 +62,20 @@ namespace ENEMY
             }
         }
 
-        void Remove()
+        void Remove()                                               //再接近
         {
-            rb.velocity = Vector3.zero;
-            transform.position = Vector3.MoveTowards(               //守るものに最短距離で近づく
+            rb.velocity = Vector3.zero;                             //速度０
+            transform.position = Vector3.MoveTowards(               //守るものに最短で近づく
                 transform.position,
                 DefenseObject.transform.position,
                 enemy_speed *3f* Time.deltaTime);
 
+        }
+
+        void kill()                                                             //消える時のエフェクト
+        {
+            GameObject effect = Instantiate(KillEffect) as GameObject;          //エフェクト生成
+            effect.transform.position = gameObject.transform.position;          //敵のいる位置に生成
         }
         
     }
