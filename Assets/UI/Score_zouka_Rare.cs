@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Score_zouka : MonoBehaviour
+public class Score_zouka_Rare : MonoBehaviour
 {
     public ScoreManager scoreManager; // ScoreManager クラスのインスタンスを参照する変数を宣言
 
@@ -13,7 +13,7 @@ public class Score_zouka : MonoBehaviour
         // ScoreManager クラスのプロパティにアクセスして値を変更する例
         if (scoreManager != null)
         {
-            scoreManager.score_num += 100;
+            scoreManager.score_num += 500;
         }
     }
 }
