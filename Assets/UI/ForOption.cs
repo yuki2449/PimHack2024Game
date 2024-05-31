@@ -13,6 +13,11 @@ public class ForOption : MonoBehaviour
     public void Option()
     {
         Debug.Log("ForOption");
+        Invoke("ChangeOption", 0.15f);
+        
+    }
+    void ChangeOption()
+    {
         SceneManager.LoadScene("Option");
     }
 }
