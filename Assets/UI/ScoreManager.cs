@@ -8,7 +8,9 @@ public class ScoreManager : MonoBehaviour
 
     public GameObject score_object = null; // Textオブジェクト
     public int score_num = 0; // スコア変数
-
+    void Start()
+    {
+    }
     // 更新
     void Update()
     {
