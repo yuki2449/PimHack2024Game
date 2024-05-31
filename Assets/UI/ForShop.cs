@@ -13,6 +13,11 @@ public class ForShop : MonoBehaviour
     public void ShopText()
     {
         Debug.Log("ForShop");
+        Invoke("ChangeShop", 0.15f);
+    }
+
+    void ChangeShop()
+    {
         SceneManager.LoadScene("Shop");
     }
 }

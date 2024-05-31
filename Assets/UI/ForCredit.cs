@@ -13,6 +13,11 @@ public class ForCredit : MonoBehaviour
     public void CreditButton()
     {
         Debug.Log("ForCredit");
+        Invoke("ChangeCredit",0.15f);
+    }
+
+    void ChangeCredit()
+    {
         SceneManager.LoadScene("Credit");
     }
 }
