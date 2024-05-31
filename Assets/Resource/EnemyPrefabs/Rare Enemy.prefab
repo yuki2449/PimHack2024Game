@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 7800589081498689368}
   - component: {fileID: 6790516487690222456}
   - component: {fileID: 8395265563935332251}
-  - component: {fileID: 6772713521058340204}
   - component: {fileID: 2241673296566311435}
   - component: {fileID: 8091227924181533313}
   - component: {fileID: -621331196377695673}
+  - component: {fileID: 5242781755598865902}
   m_Layer: 0
   m_Name: Rare Enemy
   m_TagString: Enemy
@@ -110,26 +110,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6772713521058340204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4061707375316982129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bc1930d35c7348dab112dca855d9240, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  HP: 3
-  enemy_speed: 5
-  enemy_move_direction: {x: 0, y: 0, z: 0}
-  enemy_Angle: {x: 0, y: 0, z: 0}
-  EnemySound: {fileID: 8300000, guid: 5bd948ce0b41f49c6bc5127e42493901, type: 3}
-  KillEffect: {fileID: 337346754196659056, guid: 2f5d0562c17bb4a4f98fce9dc36e64e2, type: 3}
-  KillSound: {fileID: 8300000, guid: b5cabc248e34142618abdeeb90d38382, type: 3}
 --- !u!54 &2241673296566311435
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -274,6 +254,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5242781755598865902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4061707375316982129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e7281b0c0275764db0b039a6c743e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  HP: 3
+  enemy_speed: 5
+  enemy_move_direction: {x: 0, y: 0, z: 0}
+  enemy_Angle: {x: 0, y: 0, z: 0}
+  EnemySound: {fileID: 8300000, guid: 5bd948ce0b41f49c6bc5127e42493901, type: 3}
+  KillEffect: {fileID: 919132149155446097, guid: bd3c3186b708abe499aad4254fc5dbdb, type: 3}
+  KillSound: {fileID: 8300000, guid: b5cabc248e34142618abdeeb90d38382, type: 3}
+  scoreManager: {fileID: 0}
 --- !u!1001 &6552408368357504940
 PrefabInstance:
   m_ObjectHideFlags: 0
