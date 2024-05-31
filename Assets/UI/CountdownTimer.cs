@@ -1,30 +1,30 @@
-
+using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine; // Unityï¿½Gï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½ÌŠï¿½{ï¿½@ï¿½\ï¿½ï¿½ï¿½gï¿½pï¿½ï¿½ï¿½é‚½ï¿½ß‚Ì–ï¿½ï¿½Oï¿½ï¿½ï¿½
-using UnityEngine.UI; // UIï¿½vï¿½fï¿½iTextï¿½Rï¿½ï¿½ï¿½|ï¿½[ï¿½lï¿½ï¿½ï¿½gï¿½È‚Çjï¿½ï¿½ï¿½gï¿½pï¿½ï¿½ï¿½é‚½ï¿½ß‚Ì–ï¿½ï¿½Oï¿½ï¿½ï¿½
-
+using UnityEngine.UI;
 
 public class CountdownTimer : MonoBehaviour
 {
-    public Text timerText; // ?^?C?}?[???c?????????\????????????UI Text?R???|?[?l???g
-    private float timeRemaining = 10f; // 5 minutes in seconds?i300?b??5???j
+    public Text timerText; 
+    private float timeRemaining = 5f; // c‚èŠÔ
 
     private void Update()
     {
-        // timeRemaining??0???????????????A?J?E???g?_?E??????????
         if (timeRemaining > 0)
         {
-            timeRemaining -= Time.deltaTime; // ?c???????????????i???t???[?????????o?????????????????j
-            int minutes = Mathf.FloorToInt(timeRemaining / 60); // ?c????????????????
-            int seconds = Mathf.FloorToInt(timeRemaining % 60); // ?c?????????b??????
-            timerText.text = minutes.ToString("00") + ":" + seconds.ToString("00"); // ?????b??"00:00"?`?????\??
+            timeRemaining -= Time.deltaTime; //c‚èŠÔ‚©‚çŒo‰ßŠÔ‚ğˆø‚­
+            int minutes = Mathf.FloorToInt(timeRemaining / 60); //c‚èŠÔ‚ğ•ª‚É•ÏŠ·
+            int seconds = Mathf.FloorToInt(timeRemaining % 60); //c‚èŠÔ‚ğ•b‚É•ÏŠ·
+            timerText.text = minutes.ToString("00") + ":" + seconds.ToString("00"); //00:00‚ÌŒ`®‚É•ÏŠ·
         }
+
         else
         {
-            timerText.text = "Time's up!"; // ï¿½cï¿½èï¿½Ô‚ï¿½0ï¿½É‚È‚ï¿½ï¿½ï¿½ï¿½ê‡ï¿½A"Time's up!"ï¿½Æ•\ï¿½ï¿½
-            SceneManager.LoadScene("GameClear");
-
+            timerText.text = "Time's up!";
+            Invoke("ChangeScene", 2.5f);
         }
     }
+    void ChangeScene()
+    {
+        SceneManager.LoadScene("GameClear");
+    }
 }
-
