@@ -1,26 +1,29 @@
+
 using UnityEngine.SceneManagement;
-using UnityEngine; // UnityƒGƒ“ƒWƒ“‚ÌŠî–{‹@”\‚ğg—p‚·‚é‚½‚ß‚Ì–¼‘O‹óŠÔ
-using UnityEngine.UI; // UI—v‘fiTextƒRƒ“ƒ|[ƒlƒ“ƒg‚È‚Çj‚ğg—p‚·‚é‚½‚ß‚Ì–¼‘O‹óŠÔ
+using UnityEngine; // Unityï¿½Gï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½ÌŠï¿½{ï¿½@ï¿½\ï¿½ï¿½ï¿½gï¿½pï¿½ï¿½ï¿½é‚½ï¿½ß‚Ì–ï¿½ï¿½Oï¿½ï¿½ï¿½
+using UnityEngine.UI; // UIï¿½vï¿½fï¿½iTextï¿½Rï¿½ï¿½ï¿½|ï¿½[ï¿½lï¿½ï¿½ï¿½gï¿½È‚Çjï¿½ï¿½ï¿½gï¿½pï¿½ï¿½ï¿½é‚½ï¿½ß‚Ì–ï¿½ï¿½Oï¿½ï¿½ï¿½
+
 
 public class CountdownTimer : MonoBehaviour
 {
-    public Text timerText; // ƒ^ƒCƒ}[‚Ìc‚èŠÔ‚ğ•\¦‚·‚é‚½‚ß‚ÌUI TextƒRƒ“ƒ|[ƒlƒ“ƒg
-    private float timeRemaining = 300f; // 5 minutes in secondsi300•b5•ªj
+    public Text timerText; // ?^?C?}?[???c?????????\????????????UI Text?R???|?[?l???g
+    private float timeRemaining = 10f; // 5 minutes in seconds?i300?b??5???j
 
     private void Update()
     {
-        // timeRemaining‚ª0‚æ‚è‘å‚«‚¢ê‡AƒJƒEƒ“ƒgƒ_ƒEƒ“‚ğ‘±‚¯‚é
+        // timeRemaining??0???????????????A?J?E???g?_?E??????????
         if (timeRemaining > 0)
         {
-            timeRemaining -= Time.deltaTime; // c‚èŠÔ‚ğŒ¸‚ç‚·i–ˆƒtƒŒ[ƒ€‚²‚Æ‚ÉŒo‰ß‚µ‚½ŠÔ‚ğˆø‚­j
-            int minutes = Mathf.FloorToInt(timeRemaining / 60); // c‚èŠÔ‚ğ•ª‚É•ÏŠ·
-            int seconds = Mathf.FloorToInt(timeRemaining % 60); // c‚èŠÔ‚ğ•b‚É•ÏŠ·
-            timerText.text = minutes.ToString("00") + ":" + seconds.ToString("00"); // •ª‚Æ•b‚ğ"00:00"Œ`®‚Å•\¦
+            timeRemaining -= Time.deltaTime; // ?c???????????????i???t???[?????????o?????????????????j
+            int minutes = Mathf.FloorToInt(timeRemaining / 60); // ?c????????????????
+            int seconds = Mathf.FloorToInt(timeRemaining % 60); // ?c?????????b??????
+            timerText.text = minutes.ToString("00") + ":" + seconds.ToString("00"); // ?????b??"00:00"?`?????\??
         }
         else
         {
-            timerText.text = "Time's up!"; // c‚èŠÔ‚ª0‚É‚È‚Á‚½ê‡A"Time's up!"‚Æ•\¦
+            timerText.text = "Time's up!"; // ï¿½cï¿½èï¿½Ô‚ï¿½0ï¿½É‚È‚ï¿½ï¿½ï¿½ï¿½ê‡ï¿½A"Time's up!"ï¿½Æ•\ï¿½ï¿½
             SceneManager.LoadScene("GameClear");
+
         }
     }
 }
