@@ -1,3 +1,4 @@
+using UnityEngine.SceneManagement;
 using UnityEngine; // Unityエンジンの基本機能を使用するための名前空間
 using UnityEngine.UI; // UI要素（Textコンポーネントなど）を使用するための名前空間
 
@@ -19,6 +20,7 @@ public class CountdownTimer : MonoBehaviour
         else
         {
             timerText.text = "Time's up!"; // 残り時間が0になった場合、"Time's up!"と表示
+            SceneManager.LoadScene("GameClear");
         }
     }
 }
