@@ -24,13 +24,12 @@ public class ScoreManager : MonoBehaviour
         Text score_text = score_object.GetComponent<Text>();
         // ?e?L?X?g???\??????????????
         score_text.text = "Score:" + score_num;
-    }
 
-    private void FixedUpdate()
-    {
         PlayerPrefs.SetInt("SCORE", score_num);
         PlayerPrefs.Save();
     }
+
+    
 
     public int ScoreProperty
     {
