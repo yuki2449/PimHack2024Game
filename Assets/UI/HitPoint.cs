@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HitPoint : MonoBehaviour
@@ -27,7 +28,9 @@ public class HitPoint : MonoBehaviour
         if (DefenceHP == 0)
         {
             Hp3.GetComponent<Image>().enabled = false;
+            SceneManager.LoadScene("GameOver");
         }
+    }
     }
     public int DefenceHPProperty
     {
