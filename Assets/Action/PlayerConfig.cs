@@ -13,6 +13,9 @@ namespace PLAYER
         [SerializeField] private GameObject Config;          //親オブジェクトを定義
         private Rigidbody rb;                                //物理演算コンポーネント
         [SerializeField] private float speed;                //スピードの定義
+        float Xlimit = 15.0f;
+        float Zlimit = 15.0f;
+
 
         private void Start()
         {
@@ -43,9 +46,11 @@ namespace PLAYER
             Player_Angle.y = Config.transform.localEulerAngles.y;       //回転させた時のy軸角度
             PlayerTransform.rotation = Quaternion.Euler(Player_Angle.x, Player_Angle.y, 0); //回転してもプレイヤーの向きは変わらない
 
+            Vector3 NowPos = transform.position;
+            NowPos.x = Mathf.Clamp(NowPos.x, -Xlimit, Xlimit);
+            NowPos.z = Mathf.Clamp(NowPos.z, -Zlimit, Zlimit);
 
-
-
+            transform.position = NowPos;
         }
 
     }
