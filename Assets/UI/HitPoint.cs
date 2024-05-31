@@ -7,14 +7,17 @@ using UnityEngine.UI;
 
 public class HitPoint : MonoBehaviour
 {
+
     AudioSource MikanAudio;
     [SerializeField] public AudioClip Mikan2BGM;
     [SerializeField] public AudioClip Mikan1BGM;
     [SerializeField] public AudioClip Mikan0BGM;
+
     public int DefenceHP = 3;
     [SerializeField] Image Hp1;
     [SerializeField] Image Hp2;
     [SerializeField] Image Hp3;
+
     bool Mikan2HP = false;
     bool Mikan1HP = false;
     bool Mikan0HP = false;
@@ -24,6 +27,7 @@ public class HitPoint : MonoBehaviour
         MikanAudio = GetComponent<AudioSource>();
         
     }
+
     void Update()
     {
 
@@ -65,8 +69,10 @@ public class HitPoint : MonoBehaviour
         set { DefenceHP = value; }
     }
 
+
     void SceneMove()
     {
         SceneManager.LoadScene("GameOver");
     }
+
 }
