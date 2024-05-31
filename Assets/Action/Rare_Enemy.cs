@@ -19,8 +19,8 @@ namespace ENEMY
         [SerializeField] private GameObject KillEffect;             //
         [SerializeField] public AudioClip KillSound;                //
         bool killflag = true;
-
-
+        public ScoreManager scoreManager;                           // ScoreManager クラスのインスタンスを参照する変数を宣言
+        private int SC;
 
         void Start()
         {
@@ -45,6 +45,13 @@ namespace ENEMY
                 Destroy(gameObject, 0.5f);
                 Invoke(nameof(kill), 0.49f);
                 Invoke(nameof(KillBGM), 0.2f);
+                if (SC == 0)
+                {
+                    scoreManager = FindObjectOfType<ScoreManager>();
+                    scoreManager.score_num += 500;
+                    SC += 1;
+                }
+
             }
         }
         public void Damage(int damage)                              //ダメージを受けた時、HPを減らす
@@ -82,6 +89,7 @@ namespace ENEMY
             GameObject effect = (GameObject)Instantiate(KillEffect);            //エフェクト生成
             effect.transform.position = gameObject.transform.position;          //敵のいる位置に生成
             Destroy(effect, 0.1f);
+           
         }
 
         void KillBGM()
