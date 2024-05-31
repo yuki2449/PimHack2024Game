@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MyScript : MonoBehaviour
+public class DefenceHP : MonoBehaviour
 {
     private HitPoint script_HitPoint;
 
