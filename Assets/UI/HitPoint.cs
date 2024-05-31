@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class HitPoint : MonoBehaviour
 {
     public int DefenceHP = 3;
@@ -30,7 +31,6 @@ public class HitPoint : MonoBehaviour
             Hp3.GetComponent<Image>().enabled = false;
             SceneManager.LoadScene("GameOver");
         }
-    }
     }
     public int DefenceHPProperty
     {
