@@ -23,7 +23,7 @@ public class TitleKakusi : MonoBehaviour
  
     IEnumerator TitleK()
     {
-        for (int turn=0; turn<50; turn++)
+        for (int turn=0; turn<36; turn++)
         {
             ObjectForK.transform.Rotate(0,0,-10);
             yield return new WaitForSeconds(0.1f);
