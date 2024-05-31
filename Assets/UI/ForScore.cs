@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;  // 追加：Textコンポーネントのために必要
+using UnityEngine.UI;  // ?????FText?R???|?[?l???g?????????K?v
 
 public class ForScore : MonoBehaviour
 {
-    public GameObject score_object = null; // Textオブジェクト
+    public GameObject score_object = null; // Text?I?u?W?F?N?g
     private ScoreManager script_ScoreManager;
 
     void Start()
@@ -17,7 +17,7 @@ public class ForScore : MonoBehaviour
         }
         else
         {
-            Debug.LogError("ScoreManagerが見つかりません！");
+            Debug.Log("ScoreManager?????????????????I");
         }
     }
 
@@ -26,21 +26,21 @@ public class ForScore : MonoBehaviour
     {
         if (score_object != null)
         {
-            // オブジェクトからTextコンポーネントを取得
+            // ?I?u?W?F?N?g????Text?R???|?[?l???g??????
             Text score_text = score_object.GetComponent<Text>();
             if (score_text != null)
             {
-                // テキストの表示を入れ替える
+                // ?e?L?X?g???\??????????????
                 score_text.text = "Score:" + script_ScoreManager.ScoreProperty;
             }
             else
             {
-                Debug.LogError("Textコンポーネントが見つかりません！");
+                Debug.Log("Text?R???|?[?l???g?????????????????I");
             }
         }
         else
         {
-            Debug.LogError("score_objectが設定されていません！");
+            Debug.Log("score_object?????????????????????I");
         }
     }
 }
