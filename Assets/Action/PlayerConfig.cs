@@ -15,19 +15,23 @@ namespace PLAYER
         [SerializeField] private float speed;                //スピードの定義
         float Xlimit = 15.0f;
         float Zlimit = 15.0f;
+        private Animator mikan_anime;
 
 
         private void Start()
         {
             rb = this.gameObject.GetComponent<Rigidbody>(); //Rigidbodyをコンポーネントに追加
+            mikan_anime = GetComponent<Animator>();
         }
-        void Update()
+        void FixedUpdate()
         {
             //プレイヤーのトランスフォームコンポーネントを定義
             Transform PlayerTransform = this.transform;
 
             float Horizontal = Input.GetAxis("Horizontal");  //横移動
             float Vertical = Input.GetAxis("Vertical");     //縦移動
+
+            Vector3 Mikan_velocity = new Vector3(Horizontal,rb.velocity.y, Vertical).normalized;
 
             //move//
 
@@ -37,7 +41,17 @@ namespace PLAYER
             //カメラの向きの方向は縦方向、カメラの右方向の向きは横方向。
             //足し算にして斜めの方向を実装
             move_direction = Camera_Direction * Vertical + Config.transform.right * Horizontal;
+            if(Mikan_velocity.magnitude > 0.1f)
+            {
+                mikan_anime.SetBool("Move", true);
+            }
+            else
+            {
+                mikan_anime.SetBool("Move", false);
+            }
             rb.velocity = move_direction * speed;  //移動　＝　プレイヤーの向き × スピード
+
+
 
             //move//
 
