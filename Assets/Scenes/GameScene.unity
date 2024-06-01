@@ -1995,8 +1995,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemypref: {fileID: 4061707375316982129, guid: 0c7c9822c25ee224e82e47faca47cb4a, type: 3}
-  Respawn_MinT: 2
-  Respawn_MaxT: 5
+  Respawn_MinT: 10
+  Respawn_MaxT: 20
   Respawn_MinX_Pos: -50
   Respawn_MaxX_Pos: 50
   Respawn_MinY_Pos: 0
