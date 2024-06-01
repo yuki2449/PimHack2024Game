@@ -59,7 +59,7 @@ public class HitPoint : MonoBehaviour
                 Mikan0HP = true;
                 MikanAudio.PlayOneShot(Mikan0BGM);
             }
-            Invoke(nameof(SceneMove), 5.0f);
+            Invoke(nameof(SceneMove), 0f);
             
         }
     }

@@ -10,6 +10,7 @@ public class ScoreData : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(Sm); 
         score_num = 0;
         Sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }

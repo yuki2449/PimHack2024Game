@@ -376,8 +376,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -24}
-  m_SizeDelta: {x: 15, y: 15}
+  m_AnchoredPosition: {x: 70, y: -40}
+  m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &25207077
 MonoBehaviour:
@@ -1204,10 +1204,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemypref: {fileID: 4061707375316982129, guid: 4377715a3963a4c4c9145515cca88911, type: 3}
-  Respawn_MinT: 3
+  Respawn_MinT: 5
   Respawn_MaxT: 10
-  Respawn_MinX_Pos: -10
-  Respawn_MaxX_Pos: 10
+  Respawn_MinX_Pos: -20
+  Respawn_MaxX_Pos: 20
   Respawn_MinY_Pos: 0
   Respawn_MaxY_Pos: 5
   Respawn_MinZ_Pos: 15
@@ -1241,7 +1241,6 @@ GameObject:
   - component: {fileID: 530049855}
   - component: {fileID: 530049854}
   - component: {fileID: 530049856}
-  - component: {fileID: 530049857}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1308,7 +1307,7 @@ Transform:
   m_GameObject: {fileID: 530049849}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1360,7 +1359,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!135 &530049856
 SphereCollider:
@@ -1383,18 +1382,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &530049857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 530049849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90b79a8da10bea947b2f51cc3160ac3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &571351765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1571,14 +1558,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemypref: {fileID: 4061707375316982129, guid: 4377715a3963a4c4c9145515cca88911, type: 3}
-  Respawn_MinT: 3
+  Respawn_MinT: 5
   Respawn_MaxT: 10
   Respawn_MinX_Pos: 15
   Respawn_MaxX_Pos: 30
   Respawn_MinY_Pos: 0
   Respawn_MaxY_Pos: 5
-  Respawn_MinZ_Pos: -10
-  Respawn_MaxZ_Pos: 10
+  Respawn_MinZ_Pos: -20
+  Respawn_MaxZ_Pos: 20
 --- !u!4 &615347638
 Transform:
   m_ObjectHideFlags: 0
@@ -2010,12 +1997,12 @@ MonoBehaviour:
   enemypref: {fileID: 4061707375316982129, guid: 0c7c9822c25ee224e82e47faca47cb4a, type: 3}
   Respawn_MinT: 2
   Respawn_MaxT: 5
-  Respawn_MinX_Pos: -10
-  Respawn_MaxX_Pos: 10
+  Respawn_MinX_Pos: -50
+  Respawn_MaxX_Pos: 50
   Respawn_MinY_Pos: 0
   Respawn_MaxY_Pos: 5
-  Respawn_MinZ_Pos: -10
-  Respawn_MaxZ_Pos: 10
+  Respawn_MinZ_Pos: -50
+  Respawn_MaxZ_Pos: 50
 --- !u!1 &906637378
 GameObject:
   m_ObjectHideFlags: 0
@@ -2585,14 +2572,14 @@ RectTransform:
   m_GameObject: {fileID: 1134264885}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.762, y: 2.762, z: 2.762}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1233265811}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17, y: 245}
+  m_AnchoredPosition: {x: 0, y: 600}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1134264887
@@ -2641,7 +2628,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '05:00
+  m_Text: '03:00
 
 '
 --- !u!222 &1134264889
@@ -3566,14 +3553,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemypref: {fileID: 4061707375316982129, guid: 4377715a3963a4c4c9145515cca88911, type: 3}
-  Respawn_MinT: 1
+  Respawn_MinT: 5
   Respawn_MaxT: 10
   Respawn_MinX_Pos: -30
   Respawn_MaxX_Pos: -15
   Respawn_MinY_Pos: 0
   Respawn_MaxY_Pos: 5
-  Respawn_MinZ_Pos: -50
-  Respawn_MaxZ_Pos: 50
+  Respawn_MinZ_Pos: -20
+  Respawn_MaxZ_Pos: 20
 --- !u!1 &1548996751
 GameObject:
   m_ObjectHideFlags: 0
@@ -3756,10 +3743,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemypref: {fileID: 4061707375316982129, guid: 4377715a3963a4c4c9145515cca88911, type: 3}
-  Respawn_MinT: 3
+  Respawn_MinT: 5
   Respawn_MaxT: 10
-  Respawn_MinX_Pos: -10
-  Respawn_MaxX_Pos: 10
+  Respawn_MinX_Pos: -20
+  Respawn_MaxX_Pos: 20
   Respawn_MinY_Pos: 0
   Respawn_MaxY_Pos: 5
   Respawn_MinZ_Pos: -30
@@ -3975,7 +3962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_object: {fileID: 314092928}
   score_num: 0
-  Sd: {fileID: 1699789158}
+  Sd: {fileID: 0}
 --- !u!1001 &1669281880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4122,7 +4109,7 @@ Transform:
   m_GameObject: {fileID: 1700763843}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.25, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

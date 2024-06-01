@@ -12,10 +12,24 @@ public class ResultScore : MonoBehaviour
 
     private void Start()
     {
-        ScoreMaster = GameObject.Find("ScoreData");
-        Sd = ScoreMaster.GetComponent<ScoreData>();
+        try
+        {
 
-        score_num = Sd.GetScore();
-        tx.text = string.Format("{0}", score_num);
+            ScoreMaster = GameObject.Find("ScoreData");
+            Sd = ScoreMaster.GetComponent<ScoreData>();
+
+            score_num = Sd.GetScore();
+            //Debug.Log(score_num);
+            tx.text = string.Format("{0}", score_num);
+            Destroy(ScoreMaster);
+        }
+        catch 
+        {
+            Debug.Log("Error");
+            Destroy(ScoreMaster);
+        }
+        
+        
+
     }
 }

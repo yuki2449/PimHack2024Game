@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class CountdownTimer : MonoBehaviour
 {
     public Text timerText; 
-    private float timeRemaining = 10f; // ?c??????
+    private float timeRemaining =  60f; // ?c??????
 
     private void Update()
     {
@@ -20,7 +20,7 @@ public class CountdownTimer : MonoBehaviour
         else
         {
             timerText.text = "Time's up!";
-            Invoke("ChangeScene", 2.5f);
+            Invoke("ChangeScene",0f);
         }
     }
     void ChangeScene()

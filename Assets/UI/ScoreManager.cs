@@ -13,7 +13,7 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
+        
         score_num = 0;
         Sd = GameObject.Find("ScoreData").GetComponent<ScoreData>();
     }
@@ -27,6 +27,8 @@ public class ScoreManager : MonoBehaviour
 
         PlayerPrefs.SetInt("SCORE", score_num);
         PlayerPrefs.Save();
+
+
     }
 
 
